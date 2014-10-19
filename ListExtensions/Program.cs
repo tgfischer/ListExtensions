@@ -19,6 +19,8 @@ namespace ListExtensions
 
             List<List<int>> permutations = list.GetPermutations();
 
+            Console.WriteLine("--- GetPermutations ---");
+
             foreach (List<int> permutation in permutations)
             {
                 for (int i = 0; i < permutation.Count; i++)
@@ -31,7 +33,17 @@ namespace ListExtensions
                 Console.WriteLine();
             }
 
-            Console.WriteLine("\n" + permutations.Count);
+            Console.WriteLine("\n--- Swap ---");
+
+            list.Swap(0, 2);
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.Write(list[i]);
+
+                if (i < list.Count - 1) Console.Write(", ");
+            }
+
             Console.ReadLine();
         }
     }
